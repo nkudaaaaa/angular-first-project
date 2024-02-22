@@ -1,0 +1,10 @@
+<div class="users-list-main">
+  <div class="users-list" *ngFor="let user of (usersService.users$ | async)">
+    <app-user-card [user]="user" (deleteUserEvent)="deleteUser($event)" (onEdited)="openCreateEditUserDialog(true, user)"></app-user-card>
+  </div>
+  <button class="button-open-modal" style="height: 30px;" (click)="openCreateEditUserDialog(false)">+</button>
+
+  <div class="" *ngIf="(usersService.users$ | async )!.length === 0">
+    <h1>No Items(((</h1>
+  </div>
+</div>

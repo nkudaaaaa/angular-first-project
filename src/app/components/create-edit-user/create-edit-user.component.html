@@ -1,0 +1,42 @@
+<!--<div class="add-user-form">-->
+<!--  <h2>Add User</h2>-->
+<!--  <form [formGroup]="newUserInfo" (ngSubmit)="onSubmit()">-->
+<!--    <div class="form-group">-->
+<!--      <label for="name">Name:</label>-->
+<!--      <input type="text" id="name" name="name" placeholder="Enter your name" formControlName="name">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="street">Street:</label>-->
+<!--      <input type="text" id="street" name="street" placeholder="Enter your street" formControlName="street">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="companyname">Company Name:</label>-->
+<!--      <input type="text" id="companyname" name="companyname" placeholder="Enter your company name" formControlName="company">-->
+<!--    </div>-->
+<!--    <button type="submit">Submit</button>-->
+<!--  </form>-->
+<!--</div>-->
+
+<h2>{{ data.isEdit ? 'Edit User' : 'Create User' }}</h2>
+
+<form [formGroup]="userForm">
+  <mat-form-field>
+    <input matInput formControlName="name" placeholder="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="company" placeholder="company">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="street" placeholder="street">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="website" placeholder="website">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="saveUser()" style="margin-left: 60px;">
+    {{ data.isEdit ? 'Save' : 'Create' }}
+  </button>
+</form>
